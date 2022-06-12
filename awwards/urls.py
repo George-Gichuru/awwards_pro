@@ -30,4 +30,4 @@ urlpatterns = [
 
 
 # if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL,document_root=os.path.join(settings.BASE_DIR,'media')
+#     urlpatterns += static(settings.MEDIA_URL,document_root=os.path.join(settings.BASE_DIR,'media'))
