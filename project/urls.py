@@ -11,4 +11,3 @@ urlpatterns=[
     path('search/',search_results, name='search_results'),
     path('logout/', LogoutView.as_view(), name='logout'),
 ]
-#dd
