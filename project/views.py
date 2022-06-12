@@ -10,7 +10,7 @@ from django.db.models import Avg
 import math
 import random
 
-# Create your views here
+# Create your views here.
 
 def home(request):
     posts = Post.objects.all().order_by("-posted")
