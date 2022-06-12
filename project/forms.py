@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from .models import Post, Profile,Rate
+#mnjj
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(max_length=80)
