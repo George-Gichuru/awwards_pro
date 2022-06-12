@@ -91,15 +91,26 @@ WSGI_APPLICATION = 'awwards.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Smurk',
-        'USER': 'postgres',
-        'PASSWORD': 'gichuru',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Smurk',
+#         'USER': 'postgres',
+#         'PASSWORD': 'gichuru',
+#     }
+# }
 
+
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME':'d5j6nq1qea14us',
+      'USER':'isluxrxjmwfamq',
+      'PASSWORD':'abd31088ba6b127a1ba704688d14ed552cb80bd433a62ea4d12019eab7267561',
+      'HOST':'ec2-52-44-13-158.compute-1.amazonaws.com',
+      'PORT':'5432',
+   }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
