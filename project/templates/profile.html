@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static%}
+{% block content %}
+{% load cloudinary %}
+
+
+<div class="card text-white bg-secondary" >
+    <div class="row">
+        <div class="col-6 col-md-4 mt-4 mb-4">
+        {%if user.profile.prof_pic%}
+          <img class="rounded-circle  d-block mx-auto" height='200px' width='200px' src="{{ user.profile.prof_pic.url }}">
+         {%else%}
+         <img class="rounded-circle" src="https://res.cloudinary.com/dw9y1xy4x/image/upload/v1603747573/insta/default-profile_neorvq.png" height='250px' width='250px'  alt="">
+         {% endif%}
+         </div>
+          <div class="card-body col-6 col-md-4 mt-5">
+            <h5 class="card-title">{{user.username}}</h5>
+            <p class="card-text"> {{user.email}}</p>
+            <p class="card-text"> {{user.profile.bio}}</p>
+            <p class="card-text"> {{user.profile.country}}</p>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+{% endblock content %}

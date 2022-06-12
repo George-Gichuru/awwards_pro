@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% load cloudinary %}
+
+{% block content %}
+<div class="container-fluid" >
+  
+   
+  {% if posts %}
+  <h2 class="text-center"> Found {{posts|length}} posts with the search term "{{message}}"</h2>
+  {% else %}
+  <h2 class="text-center"> Found 0 posts for the search term "{{message}}"</h2>
+  {% endif %}
+</div>
+
+
+{% if posts %}
+<div class="d-flex flex-wrap justify-content-center">
+  {% for post in posts %}
+  <a href="{% url 'details' post_id=post.id%}">
+        <div class="card col-lg-3 col-md-2 m-2 p-2" >
+  <img src="{{ post.picture.url}}" class="card-img-top" width='auto' height='300' alt="{{post.projectname}}">
+  <div class="card-body">
+  <h5 class="card-title">{{post.projectname|title}}
+  <a class='float-right' href="{{post.website}} " target="_blank">Visit Site</a>
+   </h5> 
+     <p class="card-footer " ><img class="rounded-circle" src="{{post.user.profile.prof_pic.url}}"  height ='30px' width='30px' alt="">
+        {{post.user.username|title}} <span style="float:right">{{post.posted|date}}</span>
+                </p>
+  </div>
+</div></a>
+{% endfor %}
+
+</div>
+{%endif %}
+
+</div>
+</div>
+
+
+{% endblock content %}

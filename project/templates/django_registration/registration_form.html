@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                
+                <div class="card-body mr-3 ml-3">
+                    <p class="text-center text-secondary">Sign up to rate projects
+                    </p>
+                    <form action="" method="post" novalidate>
+                        {% csrf_token%}
+                       {{ form|crispy }}
+                        <button type="submit" class="btn btn-primary btn-sm"> Sign up</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="card mt-2">
+                <div class="card-body mt-3 mr-3 ml-3">
+                    <p>Have an account? <a href="{% url 'login' %}">Log in</a></p>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+{% endblock content %}

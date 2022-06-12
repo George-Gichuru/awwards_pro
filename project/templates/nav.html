@@ -1,0 +1,63 @@
+
+{% load crispy_forms_tags %}
+{% load static%}
+{% load cloudinary %}
+
+<nav class="navbar navbar-expand-lg navbar-light" >
+  <a class="navbar-brand" href="/">
+    <strong class="mr-4 brand" > Awwwards.</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="background-color:#ffffff" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results'%}">
+          <input class="form-control ml-auto search-input" name="post" type="search" placeholder="Search Projects" aria-label="Search"/>
+        </form>
+      </li>
+    </ul>
+  </div>
+   
+    <ul class="navbar-nav ml-auto">
+      {% if user.is_authenticated%}
+      <div style="float:left">
+        <li class="nav-item dropdown order-1">
+          <a class="nav-link mt-1" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {%if user.profile.prof_pic%}
+            <img class="rounded-circle" src="{{ user.profile.prof_pic.url }}" height ='30px' width='30px'  alt="" >
+            {%else%}
+            <img class="rounded-circle" src="https://res.cloudinary.com/dw9y1xy4x/image/upload/v1603747573/insta/default-profile_neorvq.png" height ='30px' width='30px'  alt="" >
+            {% endif%}
+          </a>
+          <div class="dropdown-menu dropdown-primary"  aria-labelledby="navbarDropdownMenuLink" >
+            <a class="dropdown-item text-center" href="{% url 'profile' user.username %}" >Profile</a>
+            <a class="dropdown-item text-center" href="{% url 'edit' user.username  %}"> Edit profile</a><hr>
+            <a href="/accounts/logout" class="text-secondary text-center dropdown-item" >Log Out</a>
+          </div>
+        </li>
+      </div>
+       <h6> <a class="mt-3 btn btn-sm" data-toggle="modal" data-target="#project">Submit your project</a> </h6>
+    
+      {% else %}
+        <h6>Are you a member?<a href="{% url 'login' %}" class="login btn btn-sm">REGISTER/LOGIN</a></h6>
+      {% endif %}
+     
+    </ul>
+     
+  </div>
+</nav>
+<div class="modal fade" id="project" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="" method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    {{ uform|crispy }}
+                    <button class="btn btn-sm btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

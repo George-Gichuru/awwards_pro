@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static%}
+{% load cloudinary %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card" style="margin-top:2%; padding:20px">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><b>Update Your Profile</b></h5>
+                    <hr>
+                    <div class="card-text">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ user_form|crispy }}
+                            {{ prof_form|crispy }}
+                            <input type="submit" class="btn btn-sm btn-dark" value="Save"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}
