@@ -9,7 +9,6 @@ Written by George Gichuru.
 ## Endpoints
 
 - Get all posts: '' : Method = 'GET'
-- Get a single post: '' : Method = 'GET'
 
 ## Installation
 
