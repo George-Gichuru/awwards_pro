@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'cloudinary',
     'fontawesome_5',
+    'rest_framework',
+    'corsheaders'
 
 ]
 
@@ -153,6 +155,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 LOGOUT_REDIRECT_URL = "login"
 LOGIN_REDIRECT_URL="home"
 
@@ -171,3 +175,12 @@ django_heroku.settings(locals())
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = [
+    
+    "GET",
+    
+    
+]

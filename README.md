@@ -68,6 +68,10 @@ As a user I would like to:
 
 Live Link: > 
 
+## Known Bugs 
+
+The search functionality
+
 ## Contact Information
 
 To reach me, email me at: > gichurugeorge092@gmail.com

@@ -21,11 +21,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', include('project.urls')),
+    path('', include('project.urls')),
     #django_registration
     path('accounts/', include('django_registration.backends.activation.urls')),
     path('accounts/', include('django_registration.backends.one_step.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('api/', include('project.api.urls')),
 ]
 
 
