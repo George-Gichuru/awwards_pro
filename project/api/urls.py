@@ -8,4 +8,3 @@ urlpatterns = [
     path('post/<pk>', views.single_post),
 ]
 
-#
