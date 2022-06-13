@@ -2,8 +2,8 @@ from django.db import router
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from project.models import Post
-from .serializers import  PostSerializer
+from project.models import Post, Profile
+from .serializers import  PostSerializer, ProfileSerializer
 
 
 
@@ -32,3 +32,22 @@ def single_post(request, pk):
     if request.method == 'GET':
         serializer = PostSerializer(post)
         return Response(serializer.data)
+
+
+@api_view(['GET'])
+def single_profile(request, pk):
+    try:
+        profile = Profile.objects.get(id=pk)
+
+    except:
+        return Response({'error': 'not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = ProfileSerializer(profile)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def get_profiles(request):
+    profiles = Profile.objects.all()
+    serializer = ProfileSerializer(profiles, many=True)
+    return Response(serializer.data)

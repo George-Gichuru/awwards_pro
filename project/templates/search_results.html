@@ -26,9 +26,11 @@
   <h5 class="card-title">{{post.projectname|title}}
   <a class='float-right' href="{{post.website}} " target="_blank">Visit Site</a>
    </h5> 
-     <p class="card-footer " ><img class="rounded-circle" src="{{post.user.profile.prof_pic.url}}"  height ='30px' width='30px' alt="">
-        {{post.user.username|title}} <span style="float:right">{{post.posted|date}}</span>
-                </p>
+     <p class="card-footer " >
+        <img class="rounded-circle" src="{{post.user.profile.prof_pic.url}}"  height ='30px' width='30px' alt="">
+        {{post.user.username|title}}
+        <span style="float:right">{{post.posted|date}}</span>
+    </p>
   </div>
 </div></a>
 {% endfor %}
