@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from project.models import Post
 from .serializers import  PostSerializer
-#
+
 
 
 @api_view(['GET'])
