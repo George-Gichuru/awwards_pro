@@ -6,4 +6,4 @@ class PostSerializer(ModelSerializer):
         model = Post
         fields = '__all__'
 
-        #
+        
