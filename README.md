@@ -6,6 +6,11 @@ The application will allow a USER to post a project he/she has created and get i
 
 Written by George Gichuru.
 
+## Endpoints
+
+- Get all posts: '' : Method = 'GET'
+- Get a single post: '' : Method = 'GET'
+
 ## Installation
 
 Clone the repository
