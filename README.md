@@ -10,6 +10,8 @@ Written by George Gichuru.
 
 - Get all posts: 'https://awwwardsapp.herokuapp.com/api/posts/' : Method = 'GET'
 
+- Get all profiles: 'https://awwwardsapp.herokuapp.com/api/profiles/'  : Method = 'GET'
+
 ## Installation
 
 Clone the repository
