@@ -8,7 +8,7 @@ Written by George Gichuru.
 
 ## Endpoints
 
-- Get all posts: '' : Method = 'GET'
+- Get all posts: 'https://awwwardsapp.herokuapp.com/api/posts/' : Method = 'GET'
 
 ## Installation
 
@@ -70,7 +70,7 @@ As a user I would like to:
 - Bootstrap
 - Javascript
 
-Live Link: > 
+Live Link: > https://awwwardsapp.herokuapp.com/
 
 ## Known Bugs 
 
